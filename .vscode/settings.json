@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/sutd/catkin_real_sense/devel/lib/python2.7/dist-packages",
+        "/home/sutd/turtlebot_ws/devel/lib/python2.7/dist-packages",
+        "/home/sutd/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
+}

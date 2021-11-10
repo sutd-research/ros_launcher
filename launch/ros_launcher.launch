@@ -1,0 +1,9 @@
+<launch>
+  <arg name="robot_name" default="human"/>	
+  <!--group ns="human"-->
+    <!-- Start Human ROS Launcher -->
+    <node pkg="ros_launcher" type="ros_launcher.py" name="$(arg robot_name)_ros_launcher" output="screen">
+      <rosparam command="load" file="$(find ros_launcher)/config/config.yaml" />
+    </node>
+  <!--/group-->
+</launch>

@@ -1,0 +1,22 @@
+## All the nodes that needs to be run / stopped must be configured here
+## This package acts as a mapping between a roslaunch or shell command and a ROS service
+
+## Step 1 : Append any new services you want to create to the "launchers" parameter
+##          Eg:  launchers: service1, service2
+## Step 2 : Define the launch parameters or the shell command for the new service
+##          Eg:   service1: {pkg: myRosPackage, launch_file: myLaunchFile.launch}
+##          Eg:   service2: "sudo ~/my_script.bash"
+
+# List of launchers to link
+launchers: odometry, fusion, rifle, glove
+
+# Launch IMU Pedestrian Localization Node
+odometry: {pkg: imu_odometry, launch_file: imu_odometry.launch}
+# Launch Drone Localization Node
+fusion: {pkg: drone_localization, launch_file: drone_localization.launch}
+# Launch Rifle node
+rifle: {pkg: imu_blu_pkg, launch_file: main_drone.launch}
+# Launch Glove node
+glove: "sudo docker run -it --network=host --device=/dev/vnav lv94/borealis_vnav:base"
+
+
